@@ -28,11 +28,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Elixir
-        uses: actions/setup-elixir@v1
+      - name: Setup Elixir
+        uses: erlef/setup-beam@v1
         with:
-          otp-version: '24.0'   
-          elixir-version: '1.12.3'  
+          otp-version: "25.3.2"
+          elixir-version: "1.14.4" 
 
       - name: Install dependencies
         run: mix deps.get
