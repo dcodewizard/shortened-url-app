@@ -1,0 +1,22 @@
+<h1>Shortened URL Statistics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shortened URL</th>
+      <th>Original URL</th>
+      <th>Visits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for data <- @stats do %>
+      <tr>
+        <td><a href="<%= Routes.link_url(@conn, :show, data.slug) %>"><%= Routes.link_url(@conn, :show, data.slug) %></a></td>
+        <td><a href="<%= data.original_url %>"><%= data.original_url %></a></td>
+        <td><%= data.visits %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link "Download CSV", to: Routes.link_path(@conn, :download_csv), class: "btn btn-primary" %>

@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <p class="lead text-center">
+    Shortened URL: <a href="<%= @shortened_url %>"><%= @shortened_url %></a>
+  </p>
+  <p class="lead text-center">
+    Original URL: <a href="<%= @original_url %>"><%= @original_url %></a>
+  </p>
+</div>

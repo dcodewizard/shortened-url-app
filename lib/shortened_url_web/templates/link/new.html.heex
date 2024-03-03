@@ -1,0 +1,13 @@
+<h2>URL Shortener</h2>
+
+<%= form_for @changeset, Routes.link_path(@conn, :shorten_url), [multipart: true], fn f -> %>
+  <div class="form-group">
+    <%= label f, :original_url, class: "control-label" %>
+    <%= text_input f, :original_url, placeholder: "Paste your URL here", required: true, class: "form-control" %>
+    <%= error_tag f, :original_url %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Shorten URL", class: "btn btn-primary" %>
+  </div>
+<% end %>
