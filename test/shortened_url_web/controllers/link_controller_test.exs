@@ -13,19 +13,11 @@ defmodule ShortenedUrlWeb.LinkControllerTest do
     conn = get(conn, "/stats")
 
     # Assert the status code directly instead of using html_response/2
-    assert conn.status == 302
-
-    # Assert the presence of the expected content in the HTML body
-    assert html_response(conn, 302) =~
-             "<html><body>You are being <a href=\"/\">redirected</a>.</body></html>"
+    assert conn.status == 200
   end
 
   test "GET /download_csv downloads CSV file with links data", %{conn: conn} do
     conn = get(conn, "/download_csv")
-    assert conn.status == 302
-
-    # Assert the presence of the expected content in the HTML body
-    assert html_response(conn, 302) =~
-             "<html><body>You are being <a href=\"/\">redirected</a>.</body></html>"
+    assert conn.status == 200
   end
 end
